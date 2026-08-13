@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Datenschutzerklärung und Support für die App TürAufmaß von Jaradii.">
+  <title>TürAufmaß – Datenschutz &amp; Support</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f2f5f8;
+      --surface: rgba(255, 255, 255, 0.9);
+      --surface-strong: #ffffff;
+      --text: #10202a;
+      --muted: #5d6b73;
+      --line: rgba(16, 32, 42, 0.11);
+      --accent: #e36f3f;
+      --accent-strong: #c85226;
+      --accent-soft: rgba(227, 111, 63, 0.12);
+      --blue: #2d7e91;
+      --shadow: 0 18px 50px rgba(25, 44, 54, 0.10);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0d1418;
+        --surface: rgba(24, 34, 40, 0.92);
+        --surface-strong: #182228;
+        --text: #f3f7f8;
+        --muted: #a7b5bc;
+        --line: rgba(255, 255, 255, 0.10);
+        --accent: #ff8b59;
+        --accent-strong: #ff9d75;
+        --accent-soft: rgba(255, 139, 89, 0.14);
+        --blue: #67c3d5;
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% -10%, var(--accent-soft), transparent 34rem),
+        radial-gradient(circle at 100% 15%, rgba(45, 126, 145, 0.11), transparent 30rem),
+        var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent-strong); }
+
+    a:hover { text-decoration-thickness: 2px; }
+
+    .skip-link {
+      position: absolute;
+      top: -60px;
+      left: 16px;
+      z-index: 10;
+      padding: 10px 14px;
+      border-radius: 10px;
+      color: #fff;
+      background: var(--accent-strong);
+    }
+
+    .skip-link:focus { top: 12px; }
+
+    .shell {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header { padding: 48px 0 24px; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(28px, 6vw, 58px);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      bottom: -100px;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, var(--accent-soft), transparent 68%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent-strong);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+    }
+
+    h1 {
+      max-width: 720px;
+      margin: 0;
+      font-size: clamp(2.35rem, 7vw, 5.2rem);
+    }
+
+    .lead {
+      max-width: 700px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    nav a, .button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 10px 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--text);
+      background: var(--surface-strong);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    nav a:hover, .button:hover {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    main { padding: 10px 0 40px; }
+
+    .section-heading {
+      margin: 54px 4px 18px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 4vw, 2.65rem);
+    }
+
+    .section-heading p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--surface);
+      box-shadow: 0 10px 30px rgba(25, 44, 54, 0.06);
+    }
+
+    .card.wide { grid-column: 1 / -1; }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.18rem;
+    }
+
+    .card p:last-child, .card ul:last-child { margin-bottom: 0; }
+
+    .card p, .card li { color: var(--muted); }
+
+    .card strong { color: var(--text); }
+
+    ul {
+      margin: 10px 0;
+      padding-left: 1.2rem;
+    }
+
+    li + li { margin-top: 6px; }
+
+    .support-card {
+      padding: clamp(26px, 5vw, 46px);
+      border: 1px solid color-mix(in srgb, var(--accent) 38%, var(--line));
+      border-radius: 28px;
+      background: linear-gradient(145deg, var(--accent-soft), var(--surface) 58%);
+      box-shadow: var(--shadow);
+    }
+
+    .support-card h2 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+    }
+
+    .support-card p { max-width: 720px; }
+
+    .button.primary {
+      margin-top: 8px;
+      border-color: transparent;
+      color: #fff;
+      background: var(--accent-strong);
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    footer {
+      padding: 14px 0 42px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 700px) {
+      .shell { width: min(100% - 22px, 980px); }
+      header { padding-top: 18px; }
+      .hero { border-radius: 23px; }
+      .grid { grid-template-columns: 1fr; }
+      .card.wide { grid-column: auto; }
+      .card { padding: 21px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#datenschutz">Zum Inhalt springen</a>
+
+  <header class="shell">
+    <div class="hero">
+      <p class="eyebrow">TürAufmaß · Jaradii</p>
+      <h1>Datenschutz &amp; Support</h1>
+      <p class="lead">Informationen zur Datenverarbeitung in TürAufmaß und ein direkter Kontakt, falls du Hilfe mit der App benötigst.</p>
+      <nav aria-label="Seitennavigation">
+        <a href="#datenschutz">Datenschutz</a>
+        <a href="#icloud">iCloud</a>
+        <a href="#export">Export</a>
+        <a href="#support">Support</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section id="datenschutz" aria-labelledby="privacy-title">
+      <div class="section-heading">
+        <p class="eyebrow">Datenschutzerklärung</p>
+        <h2 id="privacy-title">Deine Aufmaßdaten bleiben unter deiner Kontrolle.</h2>
+        <p>Stand: 13. August 2026</p>
+      </div>
+
+      <div class="grid">
+        <article class="card wide" id="verantwortlicher">
+          <h3>1. Verantwortlicher</h3>
+          <p>Verantwortlich für die App TürAufmaß ist <strong>Jaradii</strong>. Datenschutzanfragen kannst du per E-Mail an <a href="mailto:appfeedback.rented544@passmail.net">appfeedback.rented544@passmail.net</a> senden.</p>
+          <p><strong>Vor Veröffentlichung ergänzen:</strong> vollständiger bürgerlicher Name beziehungsweise Firmenname und ladungsfähige Anschrift des Verantwortlichen.</p>
+        </article>
+
+        <article class="card" id="datenverarbeitung">
+          <h3>2. Welche Daten die App verarbeitet</h3>
+          <p>Je nach Nutzung verarbeitest du in der App insbesondere:</p>
+          <ul>
+            <li>Baustellen-, Adress-, Auftraggeber- und Kontaktdaten</li>
+            <li>Räume, Türnummern, Maße und technische Ausführungen</li>
+            <li>Notizen, Fotos und ein optionales Firmenlogo</li>
+          </ul>
+          <p>Die Inhalte werden von dir selbst eingegeben oder ausgewählt. Bitte erfasse nur Daten, zu deren Verarbeitung du berechtigt bist.</p>
+        </article>
+
+        <article class="card" id="lokale-speicherung">
+          <h3>3. Lokale Speicherung</h3>
+          <p>TürAufmaß funktioniert ohne Benutzerkonto und ohne eigenen Jaradii-Server. Baustellen, Türen und Einstellungen werden zunächst lokal auf deinem Gerät gespeichert. Es gibt keine Werbung, kein Profiling und keine Nutzungsanalyse durch Jaradii.</p>
+        </article>
+
+        <article class="card" id="rechtsgrundlagen">
+          <h3>4. Zwecke und Rechtsgrundlagen</h3>
+          <p>Die lokale Verarbeitung erfolgt, damit du die von dir angeforderten App-Funktionen nutzen kannst. Soweit die DSGVO anwendbar ist, kommen insbesondere Art. 6 Abs. 1 Buchst. b DSGVO für die Bereitstellung und Nutzung der App, Art. 6 Abs. 1 Buchst. f DSGVO für sicheren Betrieb und Support sowie – falls im Einzelfall erforderlich – deine Einwilligung nach Art. 6 Abs. 1 Buchst. a DSGVO in Betracht.</p>
+        </article>
+
+        <article class="card wide" id="icloud">
+          <h3>5. Optionale iCloud-Synchronisierung</h3>
+          <p>Wenn du die iCloud-Synchronisierung aktivierst, kann die App Projektdaten und das optionale PDF-Logo über Apples CloudKit-Dienste zwischen deinen Geräten synchronisieren. Die Speicherung ist an deinen privaten Apple-Account gebunden und wird technisch durch Apple bereitgestellt. Jaradii betreibt dafür keinen eigenen Synchronisierungsserver und verwendet diese Daten nicht für Werbung oder Analyse.</p>
+          <p>Du kannst die Synchronisierung in den Einstellungen der App deaktivieren. Die Änderung wird gegebenenfalls beim nächsten Start vollständig wirksam. Bereits lokal gespeicherte Inhalte bleiben erhalten. Für die Verarbeitung durch Apple gelten zusätzlich die <a href="https://www.apple.com/legal/privacy/de-ww/">Datenschutzbestimmungen von Apple</a> und die iCloud-Bedingungen. Apple kann Daten entsprechend den eigenen Bedingungen auch außerhalb deines Landes verarbeiten.</p>
+        </article>
+
+        <article class="card" id="fotos">
+          <h3>6. Fotos, Kamera und Dateien</h3>
+          <p>Auf Kamera, Fotomediathek oder Dateien greift TürAufmaß nur zu, wenn du selbst ein Foto aufnimmst, ein Bild auswählst oder ein Logo importierst. Ausgewählte Inhalte werden der jeweiligen Dokumentation beziehungsweise dem PDF-Logo zugeordnet.</p>
+        </article>
+
+        <article class="card" id="export">
+          <h3>7. PDF-, CSV- und JSON-Export</h3>
+          <p>Exporte werden auf deinem Gerät erzeugt. Erst wenn du die Teilen- oder Speicherfunktion verwendest, gelangen sie an den von dir gewählten Speicherort oder Empfänger. Ab diesem Zeitpunkt gelten zusätzlich die Datenschutzbedingungen des ausgewählten Dienstes oder Empfängers.</p>
+        </article>
+
+        <article class="card" id="loeschung">
+          <h3>8. Löschen und Aufbewahrung</h3>
+          <p>Baustellen, Türen und Fotos kannst du innerhalb der App löschen. Beim Entfernen der App werden die lokalen App-Daten vom Gerät gelöscht. Synchronisierte Daten können im privaten iCloud-Bereich beziehungsweise auf weiteren verbundenen Geräten fortbestehen. iCloud-Daten verwaltest du über die App und die Einstellungen deines Apple-Accounts.</p>
+        </article>
+
+        <article class="card" id="rechte">
+          <h3>9. Deine Rechte</h3>
+          <p>Soweit die gesetzlichen Voraussetzungen vorliegen, hast du insbesondere Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch sowie das Recht, eine Einwilligung mit Wirkung für die Zukunft zu widerrufen. Da Jaradii die lokalen und privaten iCloud-Projektdaten nicht über einen eigenen Server verwaltet, kannst du diese Daten in erster Linie direkt in der App und über deinen Apple-Account kontrollieren.</p>
+          <p>Du kannst dich außerdem bei einer zuständigen Datenschutzaufsichtsbehörde beschweren.</p>
+        </article>
+
+        <article class="card" id="support-daten">
+          <h3>10. Daten bei Supportanfragen</h3>
+          <p>Wenn du freiwillig eine Support-E-Mail sendest, werden Absenderadresse, Nachricht und mitgesendete Inhalte verarbeitet, um deine Anfrage zu beantworten. Sende keine unnötigen Personen-, Kunden- oder Baustellendaten. Supportnachrichten werden nur so lange aufbewahrt, wie es für Bearbeitung und gesetzliche Pflichten erforderlich ist.</p>
+        </article>
+
+        <article class="card" id="sicherheit">
+          <h3>11. Sicherheit</h3>
+          <p>Die App nutzt die Schutzmechanismen von iOS und iPadOS. Auch bei technischen und organisatorischen Schutzmaßnahmen kann eine absolute Sicherheit nicht garantiert werden. Schütze dein Gerät und deinen Apple-Account mit einem sicheren Code und aktueller Software.</p>
+        </article>
+
+        <article class="card wide" id="aenderungen">
+          <h3>12. Änderungen dieser Erklärung</h3>
+          <p>Diese Erklärung wird angepasst, wenn sich Funktionen, Datenflüsse oder rechtliche Anforderungen ändern. Die jeweils aktuelle Fassung wird unter derselben Internetadresse veröffentlicht. Das Datum oben zeigt den Stand der letzten Überarbeitung.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="support" aria-labelledby="support-title">
+      <div class="section-heading">
+        <p class="eyebrow">Support</p>
+      </div>
+      <div class="support-card">
+        <h2 id="support-title">Wie können wir helfen?</h2>
+        <p>Wenn etwas nicht funktioniert oder du eine Frage zu TürAufmaß hast, schreibe bitte eine E-Mail. Hilfreich sind App-Version, iOS-/iPadOS-Version, Gerätemodell und eine kurze Beschreibung der Schritte bis zum Problem.</p>
+        <p>Füge Screenshots nur bei, wenn darauf keine vertraulichen Kunden-, Kontakt- oder Baustellendaten sichtbar sind.</p>
+        <a class="button primary" href="mailto:appfeedback.rented544@passmail.net?subject=T%C3%BCrAufma%C3%9F%20Support">Support per E-Mail kontaktieren</a>
+      </div>
+    </section>
+
+    <section id="kontakt" aria-labelledby="contact-title">
+      <div class="section-heading">
+        <p class="eyebrow">Kontakt</p>
+        <h2 id="contact-title">Jaradii</h2>
+      </div>
+      <div class="card">
+        <p><strong>E-Mail:</strong> <a href="mailto:appfeedback.rented544@passmail.net">appfeedback.rented544@passmail.net</a></p>
+        <p class="meta">Bitte beachte: Diese Seite ersetzt keine individuelle Rechtsberatung. Gesetzlich erforderliche vollständige Anbieterangaben müssen vor der Veröffentlichung durch den Herausgeber ergänzt beziehungsweise bestätigt werden.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">
+    © 2026 Jaradii · TürAufmaß
+  </footer>
+</body>
+</html>
